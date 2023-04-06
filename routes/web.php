@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('message');
 });
+// Route::get('message', function () {
+//     $message['user'] = "Juan Perez";
+//     $message['message'] =  "Prueba mensaje desde Pusher";
+//     event(new App\Events\NewMessage($message));
+// });
+

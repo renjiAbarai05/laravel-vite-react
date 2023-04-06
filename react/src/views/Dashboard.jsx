@@ -1,4 +1,22 @@
 export default function Dashboard() {
+  const people = [
+    {
+      name: "Ritche Padro",
+      gender: "male",
+      address: "Lorem ipsum 1",
+    },
+    {
+      name: "Renji Abarai",
+      gender: "male",
+      address: "Lorem ipsum 2",
+    },
+  ];
+  console.log("hey");
+  const channel = Echo.channel("test-channel");
+  channel.listen(".test-event", function (data) {
+    console.log(JSON.stringify(data));
+  });
+
   return (
     <>
       <header className="bg-white shadow">
@@ -9,7 +27,11 @@ export default function Dashboard() {
         </div>
       </header>
       <main>
-        <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8"></div>
+        <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+          {people.map((e, i) => {
+            return <p key={i}>{`${e.name} ${e.address}`}</p>;
+          })}
+        </div>
       </main>
     </>
   );
