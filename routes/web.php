@@ -17,9 +17,10 @@ use Illuminate\Http\Request;
 Route::get('/', function () {
     return view('message');
 });
-// Route::get('message', function () {
-//     $message['user'] = "Juan Perez";
-//     $message['message'] =  "Prueba mensaje desde Pusher";
-//     event(new App\Events\NewMessage($message));
-// });
+Route::get('message', function () {
+    $message['user'] = "Juan Perez";
+    $message['message'] =  "Prueba mensaje desde Pusher";
+    event(new App\Events\NewMessage($message));
+    return 'working';
+});
 
