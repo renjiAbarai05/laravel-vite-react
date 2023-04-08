@@ -5,6 +5,7 @@ import Dashboard from "./views/Dashboard";
 import Login from "./views/Login";
 import Signup from "./views/Signup";
 import Surveys from "./views/Surveys";
+import ErrorPage from "./error-page";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
         element: <Surveys />,
       },
     ],
+    errorElement: <ErrorPage />,
   },
   {
     path: "/",
